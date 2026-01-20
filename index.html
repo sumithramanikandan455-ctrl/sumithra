@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smithra Manikandan - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #8B0000 0%, #6B0000 100%);
+            padding: 80px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 6px solid #ffffff;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .hero-name {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        /* About Section */
+        .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .section-title {
+            color: #8B0000;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+
+        /* Featured Work Section */
+        .featured-section {
+            background-color: #fef5f5;
+            padding: 60px 40px;
+        }
+
+        .featured-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid #8B0000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            height: 280px;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.5) 100%);
+            z-index: 2;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 3;
+            padding: 2rem;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: #f0f0f0;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .card-link {
+            color: #ff6b6b;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: #ff5252;
+        }
+
+        /* Product Familiarity Section */
+        .product-section {
+            padding: 60px 40px;
+            background-color: #f5f5f5;
+        }
+
+        .product-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: #1a1a1a;
+            margin-bottom: 3rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid #8B0000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .product-features {
+            font-size: 1rem;
+            color: #4a4a4a;
+            margin-bottom: 1rem;
+        }
+
+        .product-link {
+            color: #8B0000;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .product-link:hover {
+            color: #b30000;
+            text-decoration: underline;
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 60px 40px;
+            background-color: #ffffff;
+        }
+
+        .newsletter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-card {
+            background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.6) 100%);
+            z-index: 1;
+        }
+
+        .content-inner {
+            position: relative;
+            z-index: 2;
+            padding: 4rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .header-section {
+            margin-bottom: 3rem;
+        }
+
+        .newsletter-title {
+            color: #ffffff;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .newsletter-subtitle {
+            font-size: 1.3rem;
+            color: #f0f0f0;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            margin-bottom: 4rem;
+        }
+
+        .article-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .article-title {
+            color: #8B0000;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-description {
+            color: #4a4a4a;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .article-link {
+            color: #8B0000;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .article-link:hover {
+            color: #b30000;
+            text-decoration: underline;
+        }
+
+        /* Work Archive Section */
+        .archive-section {
+            padding: 60px 40px;
+            background-color: #f5f5f5;
+        }
+
+        .archive-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            color: #1a1a1a;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .archive-card {
+            background: white;
+            border: 3px solid #8B0000;
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 280px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .archive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .archive-card-title {
+            color: #8B0000;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+			pointer-events: none;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #8B0000 0%, #6B0000 100%);
+            padding: 80px 40px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 60px 40px;
+        }
+
+        .contact-title {
+            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            color: #ffffff;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            opacity: 0.8;
+        }
+
+        .separator {
+            color: #ffffff;
+            font-size: 1.3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .product-grid,
+            .archive-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section,
+            .about-section,
+            .featured-section,
+            .product-section,
+            .newsletter-section,
+            .archive-section {
+                padding: 40px 20px;
+            }
+
+            .hero-name {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid,
+            .archive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-title {
+                font-size: 2.5rem;
+            }
+
+            .content-inner {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .contact-section {
+                margin: 40px 20px;
+                padding: 60px 20px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .separator {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-photo"><img src="your-photo.jpg" alt="Sumithra Manikandan" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"> </div>
+        <div class="hero-name">Sumithra Manikandan</div>
+    </section>
+
+    <!-- About Section -->
+<section class="about-section">
+    <h1 class="section-title">About</h1>
+    <p class="about-text">I work across product thinking, marketing strategy, and execution.My experience includes market sizing (TAM, SAM, SOM), positioning, and problem-solution validation, along with hands-on work in no-code applications, CRM workflows, and process design.I focus on understanding user behavior beyond demographics and turning research, content, and data into clear product decisions and effective campaigns.</p>
+</section>
+
+    <!-- Featured Work Section -->
+    <section class="featured-section">
+        <div class="featured-container">
+            <h2 class="section-title">Featured Work</h2>
+            <div class="work-grid">
+                <div class="work-card">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">TAM · SAM · SOM + Golden Circle</h3>
+                        <p class="card-subtitle">Marketing Strategy</p>
+                        <p class="card-description">Market sizing and purpose-led positioning.</p>
+                        <a href="#" class="card-link">View Presentation</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Product Pitch Deck & BMC</h3>
+                        <p class="card-subtitle">Product Management</p>
+                        <p class="card-description">Problem-solution fit and business viability.</p>
+                        <a href="#" class="card-link">View Deck</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">CRM Feature Suggestions</h3>
+                        <p class="card-subtitle">Product Thinking</p>
+                        <p class="card-description">Edge cases and workflow improvements.</p>
+                        <a href="#" class="card-link">View Document</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Psychographic Marketing Research</h3>
+                        <p class="card-subtitle">Marketing Research</p>
+                        <p class="card-description">Customer behaviour beyond demographics.</p>
+                        <a href="#" class="card-link">Read Research</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1523726491678-bf852e717f6a?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">ColourQuill – Product Ideation</h3>
+                        <p class="card-subtitle">Product · Marketing</p>
+                        <p class="card-description">Bird Cage challenge (Shark Tank style).</p>
+                        <a href="#" class="card-link">View Pitch</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Creator Applications</h3>
+                        <p class="card-subtitle">No-Code · Operations</p>
+                        <p class="card-description">Conference room booking & gate pass apps.</p>
+                        <a href="#" class="card-link">View Summary</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Familiarity Section -->
+    <section class="product-section">
+        <div class="product-container">
+            <h2 class="section-title">Product Familiarity</h2>
+            <p class="subtitle">Products explored from workflow, business, and user perspectives.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://www.zohowebstatic.com/sites/zweb/images/ogimage/crm-logo.png"alt="Zoho CRM">
+                    </div>
+                    <h3 class="product-title">Zoho CRM</h3>
+                    <p class="product-features">Leads · Sales · Lifecycle</p>
+                    <a href="#" class="product-link">Notes</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMFSwCiB5tkK152CabdKGFMFJ_O9QpCombmA&s" alt="Zoho Sheets">
+                    </div>
+                    <h3 class="product-title">Zoho Sheets</h3>
+                    <p class="product-features">Data · Analysis</p>
+                    <a href="#" class="product-link">Notes</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://i.pcmag.com/imagery/reviews/00ujHGKEl71KWTEAQEUCur5-30.fit_lim.size_1200x630.v1748550602.png" alt="Zoho Projects">
+                    </div>
+                    <h3 class="product-title">Zoho Projects</h3>
+                    <p class="product-features">Planning · Tasks</p>
+                    <a href="#" class="product-link">Notes</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4kKzbZEtodfFTpkA_QWtzfdlq-oHcs54juA&s" alt="Zoho Marketing Automation">
+                    </div>
+                    <h3 class="product-title">Zoho Marketing Automation</h3>
+                    <p class="product-features">Campaigns · Funnels</p>
+                    <a href="#" class="product-link">Notes</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://cdn.prod.website-files.com/636dd222cc4f7c485d6f026b/67cf090b64c70d2fb4ee52c5_a1e58e33-6313-4fb0-a078-8ec4041c091b.png"alt="Zoho Flow"> 
+                    </div>
+                    <h3 class="product-title">Zoho Flow</h3>
+                    <p class="product-features">Integrations · Automation</p>
+                    <a href="#" class="product-link">Notes</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://cdn-1.webcatalog.io/catalog/zoho-creator/zoho-creator-social-preview.png?v=1714776618307" alt="Zoho Creator">
+                    </div>
+                    <h3 class="product-title">Zoho Creator</h3>
+                    <p class="product-features">No-code · Workflows</p>
+                    <a href="#" class="product-link">Apps</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuqPgu33bKh3R8YCuHmj2rF0oYI-1nJIIB7w&s" alt="Zoho Desk">
+                    </div>
+                    <h3 class="product-title">Zoho Desk</h3>
+                    <p class="product-features">Support · SLA</p>
+                    <a href="#" class="product-link">Notes</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://images.g2crowd.com/uploads/product/image/social_landscape/social_landscape_01c2188b38a7cf07b0e75d396145d688/zoho-survey.jpg" alt="Zoho Survey">
+                    </div>
+                    <h3 class="product-title">Zoho Survey</h3>
+                    <p class="product-features">Feedback · Insights</p>
+                    <a href="#" class="product-link">Notes</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGTlEUJIlqlDONMY1wEBbrOTVPlFus8kVq8g&s" alt="Zoho Forms">
+                    </div>
+                    <h3 class="product-title">Zoho Forms</h3>
+                    <p class="product-features">Data · Validation</p>
+                    <a href="#" class="product-link">Notes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <div class="content-card">
+                <div class="content-overlay"></div>
+                <div class="content-inner">
+                    <div class="header-section">
+                        <h2 class="newsletter-title">Newsletter Contributions</h2>
+                        <p class="newsletter-subtitle">My written contributions across team and institutional newsletters.</p>
+                    </div>
+                    <div class="article-section">
+                        <h3 class="article-title">Product Awareness Articles</h3>
+                        <p class="article-description">Explaining tools and features.</p>
+                        <a href="#" class="article-link">Read</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Work Archive Section -->
+    <!-- Work Archive Section -->
+    <section class="archive-section">
+        <div class="archive-container">
+            <h2 class="section-title">Work Archive</h2>
+            
+            <div class="category-section">
+                <h3 class="category-title">Marketing & Analysis</h3>
+                <div class="archive-grid">
+                    <div class="archive-card">
+                        <a href="YOUR-LINK-HERE" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">Competitor Analysis</h4></a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="YOUR-LINK-HERE" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">Counter Campaign Strategy</h4></a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="YOUR-LINK-HERE" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">Deprecation & Social Media Impact</h4></a>                      
+                    </div>
+                </div>
+            </div>
+            <div class="category-section">
+                <h3 class="category-title">Content Writing</h3>
+                <div class="archive-grid">
+                    <div class="archive-card">
+                        <a href="https://workdrive.zohopublic.in/writer/open/095h58b4c2840ae614ef6bd18742cf5d57e0c" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">Story Writing</h4> </a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="https://workdrive.zohopublic.in/writer/open/36v9ia86218863cda44218e0b24de50c586cb" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">AI's Impact on Grammarly</h4></a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="https://workdrive.zohopublic.in/writer/open/095h56a8a06d6ff3c4032b5643c8bb97492ab" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">CIBIL Score</h4></a>
+                    </div>
+                </div>
+            </div>
+            <div class="category-section">
+                <h3 class="category-title">SEO & Digital Marketing</h3>
+                <div class="archive-grid">
+                    <div class="archive-card">
+                        <a href="https://workdrive.zohopublic.in/writer/open/funmm80d99a02a21f4b57a5ad79e3c467a22c" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">SEO Research Document</h4></a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="https://www.canva.com/design/DAG7QwFM0oA/VPmu6zE0_1rebhY7aBMaoQ/edit?utm_content=DAG7QwFM0oA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">SEO Key Terms </h4></a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="https://workdrive.zohopublic.in/show/open/d7e0v57cbcc9826aa4afd8a296cf20e013930" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">SEO Redirects & Googlebots</h4></a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="YOUR-LINK-HERE" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">Evolution of Music (5-Year Study)</h4>
+                        </a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="https://www.canva.com/design/DAG6SLeTz4I/LwFs8vbKy4e66d6solzhFQ/edit?utm_content=DAG6SLeTz4I&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+"target="_blank"style="text-decoration: none;">
+                            <h4 class="archive-card-title">SEO Redirects</h4></a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="https://workdrive.zohopublic.in/show/open/ox9a1e48f7fc914ff483d91a713df3adfe57e" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">Data & SEO </h4></a>
+                    </div>
+                </div>
+            </div>
+            <div class="category-section">
+                <h3 class="category-title">Security & Privacy</h3>
+                <div class="archive-grid">
+                    <div class="archive-card">
+                        <a href="https://workdrive.zohoexternal.in/folder/6ldvi68f88d8332c643e587ee2b0fd905bc8e" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">Chrome DNT</h4></a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="https://workdrive.zohopublic.in/writer/open/vi8n7d5a84a9c3a3a42feb03bee5e79ac7d2d" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">IAM</h4></a>
+                    </div>
+                    <div class="archive-card">
+                        <a href="https://workdrive.zohopublic.in/writer/open/6ldvi23f9fa7680ec49e4ae49779afd70d109" target="_blank" style="text-decoration: none;">
+                            <h4 class="archive-card-title">MFA</h4></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2 class="contact-title">Contact</h2>
+        <div class="contact-links">
+            <a href="mailto:sumithramanikandan455@gmail.com" class="contact-item">Gmail</a>
+            <span class="separator">·</span>
+            <a href="https://www.linkedin.com/in/sumithra-manikandan-789163360" target="_blank" class="contact-item">LinkedIn</a>
+            <span class="separator">·</span>
+            <a href="tel:+1234567890" class="contact-item">Contact Number</a>
+        </div>
+    </section>
+</body>
+</html>
