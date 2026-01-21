@@ -352,56 +352,60 @@
             color: #b30000;
             text-decoration: underline;
         }
-/* SECTION HEADINGS */
-.section-title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 40px 0 20px;
-}
+        /* Work Archive Section */
+        .archive-section {
+            padding: 60px 40px;
+            background-color: #f5f5f5;
+        }
 
-/* GRID */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-}
+        .archive-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
 
-/* CARD */
-.work-card {
-  border: 2px solid #b30000;
-  border-radius: 10px;
-  padding: 16px 18px;
-  min-height: 160px;
+        .category-section {
+            margin-bottom: 4rem;
+        }
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+        .category-title {
+            color: #1a1a1a;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
 
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
 
-.work-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-}
+        .archive-card {
+            background: white;
+            border: 3px solid #8B0000;
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 280px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
 
-/* TITLE */
-.work-title {
-  color: #b30000;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
+        .archive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
 
-/* DESCRIPTION */
-.work-desc {
-  font-size: 13px;
-  color: #444;
-  line-height: 1.4;
-}
+        .archive-card-title {
+            color: #8B0000;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+			pointer-events: none;
+        }
 
 
         /* Contact Section */
@@ -676,7 +680,7 @@
                     <div class="article-section">
                         <h3 class="article-title">Product Awareness Articles</h3>
                         <p class="article-description">Explaining tools and features.</p>
-                        <a href="#" class="article-link">Read</a>
+                        <a href="https://workdrive.zohoexternal.in/folder/6ldvi31ff7ef3807041e1a836266d5a188bc3" class="article-link">Read</a>
                     </div>
                 </div>
             </div>
