@@ -165,8 +165,7 @@
         .card-link:hover {
             color: #ff5252;
         }
-
-        /* Product Familiarity Section */
+		/* Product Familiarity Section */
 .product-section {
     padding: 60px 40px;
     background-color: #f5f5f5;
@@ -352,7 +351,61 @@
             color: #b30000;
             text-decoration: underline;
         }
-        /* Work Archive Section */
+         /* Work Archive Section */
+        .archive-section {
+            padding: 60px 40px;
+            background-color: #f5f5f5;
+        }
+
+        .archive-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            color: #1a1a1a;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .archive-card {
+            background: white;
+            border: 3px solid #8B0000;
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 280px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .archive-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .archive-card-title {
+            color: #8B0000;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+			pointer-events: none;
+        }
+		 /* Work Archive Section */
         .archive-section {
             padding: 60px 40px;
             background-color: #f5f5f5;
@@ -407,7 +460,7 @@
 			pointer-events: none;
         }
 
-
+		
         /* Contact Section */
         .contact-section {
             background: linear-gradient(135deg, #8B0000 0%, #6B0000 100%);
@@ -692,7 +745,7 @@
     <!-- Work Archive Section -->
     <section class="archive-section">
         <div class="archive-container">
-            <h2 class="section-title">Other Works</h2>
+            <h2 class="section-title">Work Archive</h2>
             
             <div class="category-section">
                 <h3 class="category-title">Marketing & Analysis</h3>
@@ -778,7 +831,6 @@
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section class="contact-section">
         <h2 class="contact-title">Contact</h2>
