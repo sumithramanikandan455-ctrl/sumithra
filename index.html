@@ -352,81 +352,57 @@
             color: #b30000;
             text-decoration: underline;
         }
-
-       /* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+/* SECTION HEADINGS */
+.section-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 40px 0 20px;
 }
 
-/* PAGE */
-body {
-    background: #f8f8f8;
-    padding: 40px;
-}
-
-/* ARCHIVE GRID */
-.archive-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
+/* GRID */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
 /* CARD */
-.archive-card {
-    background: #ffffff;
-    border: 3px solid #8B0000;
-    border-radius: 12px;
-    padding: 1.5rem;
-    min-height: 260px;
+.work-card {
+  border: 2px solid #b30000;
+  border-radius: 10px;
+  padding: 16px 18px;
+  min-height: 160px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* HOVER EFFECT */
-.archive-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* LINK RESET */
-.archive-card a {
-    text-decoration: none;
-    color: inherit;
-    width: 100%;
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
 /* TITLE */
-.archive-card-title {
-    color: #8B0000;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 0.6rem;
+.work-title {
+  color: #b30000;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 /* DESCRIPTION */
-.archive-card-desc {
-    font-size: 0.9rem;
-    color: #555;
-    text-align: center;
-    line-height: 1.4;
+.work-desc {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.4;
 }
 
-/* OPTIONAL TAG */
-.archive-tag {
-    margin-top: auto;
-    font-size: 0.75rem;
-    color: #8B0000;
-    font-weight: 600;
-}
 
         /* Contact Section */
         .contact-section {
@@ -708,74 +684,92 @@ body {
     </section>
 
   <section class="archive-grid">
-
-  <!-- CARD 1 -->
-  <div class="archive-card">
-    <a href="#" target="_blank">
-      <h4 class="archive-card-title">Competitor Analysis</h4>
-      <p class="archive-card-desc">
-        Market comparison, feature mapping, and strategic gap analysis.
-      </p>
-      <span class="archive-tag">Product Strategy</span>
-    </a>
+<h2 class="section-title">Marketing & Analysis</h2>
+<div class="work-grid">
+  <div class="work-card">
+    <div class="work-title">Competitor Analysis</div>
+    <div class="work-desc">Compared competitors’ positioning, features, and market gaps.</div>
   </div>
 
-  <!-- CARD 2 -->
-  <div class="archive-card">
-    <a href="#" target="_blank">
-      <h4 class="archive-card-title">PRD Documentation</h4>
-      <p class="archive-card-desc">
-        Detailed product requirements, user stories, and acceptance criteria.
-      </p>
-      <span class="archive-tag">Product Management</span>
-    </a>
+  <div class="work-card">
+    <div class="work-title">Counter Campaign Strategy</div>
+    <div class="work-desc">Designed response strategies to neutralize competing brand campaigns.</div>
   </div>
 
-  <!-- CARD 3 -->
-  <div class="archive-card">
-    <a href="#" target="_blank">
-      <h4 class="archive-card-title">User Research</h4>
-      <p class="archive-card-desc">
-        User interviews, surveys, personas, and problem validation.
-      </p>
-      <span class="archive-tag">UX Research</span>
-    </a>
+  <div class="work-card">
+    <div class="work-title">Deprecation & Social Media Impact</div>
+    <div class="work-desc">Analyzed user sentiment and engagement after feature deprecations.</div>
+  </div>
+</div>
+
+<h2 class="section-title">Content Writing</h2>
+<div class="work-grid">
+  <div class="work-card">
+    <div class="work-title">Story Writing</div>
+    <div class="work-desc">Creative storytelling pieces focused on emotion and narrative flow.</div>
   </div>
 
-  <!-- CARD 4 -->
-  <div class="archive-card">
-    <a href="#" target="_blank">
-      <h4 class="archive-card-title">Case Study</h4>
-      <p class="archive-card-desc">
-        End-to-end product problem solving with insights and outcomes.
-      </p>
-      <span class="archive-tag">Case Study</span>
-    </a>
+  <div class="work-card">
+    <div class="work-title">AI’s Impact on Grammarly</div>
+    <div class="work-desc">Studied how generative AI influences writing assistants.</div>
   </div>
 
-  <!-- CARD 5 -->
-  <div class="archive-card">
-    <a href="#" target="_blank">
-      <h4 class="archive-card-title">Content Writing</h4>
-      <p class="archive-card-desc">
-        Blogs and articles on AI, UX, and product thinking.
-      </p>
-      <span class="archive-tag">Writing</span>
-    </a>
+  <div class="work-card">
+    <div class="work-title">CIBIL Score</div>
+    <div class="work-desc">Explained credit scoring systems and financial literacy concepts.</div>
+  </div>
+</div>
+
+<h2 class="section-title">SEO & Digital Marketing</h2>
+<div class="work-grid">
+  <div class="work-card">
+    <div class="work-title">SEO Research Document</div>
+    <div class="work-desc">Keyword research, SERP analysis, and ranking opportunities.</div>
   </div>
 
-  <!-- CARD 6 -->
-  <div class="archive-card">
-    <a href="#" target="_blank">
-      <h4 class="archive-card-title">Design Thinking</h4>
-      <p class="archive-card-desc">
-        Empathy maps, ideation flows, and solution frameworks.
-      </p>
-      <span class="archive-tag">Design</span>
-    </a>
+  <div class="work-card">
+    <div class="work-title">SEO Key Terms</div>
+    <div class="work-desc">Presentation covering core SEO concepts and terminology.</div>
   </div>
 
-</section>
+  <div class="work-card">
+    <div class="work-title">SEO Redirects & Googlebots</div>
+    <div class="work-desc">Explained crawling, indexing, and redirect behaviors.</div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-title">Evolution of Music (5-Year Study)</div>
+    <div class="work-desc">Data-backed study on music trends and consumption patterns.</div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-title">SEO Redirects</div>
+    <div class="work-desc">Detailed use cases of 301, 302, and canonical redirects.</div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-title">Data & SEO</div>
+    <div class="work-desc">Using analytics and metrics to drive SEO decisions.</div>
+  </div>
+</div>
+
+<h2 class="section-title">Security & Privacy</h2>
+<div class="work-grid">
+  <div class="work-card">
+    <div class="work-title">Chrome DNT</div>
+    <div class="work-desc">Explored browser-level privacy controls and tracking policies.</div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-title">IAM</div>
+    <div class="work-desc">Identity and access management concepts for enterprise security.</div>
+  </div>
+
+  <div class="work-card">
+    <div class="work-title">MFA</div>
+    <div class="work-desc">Multi-factor authentication methods and risk mitigation.</div>
+  </div>
+</div>
 
     <!-- Contact Section -->
     <section class="contact-section">
