@@ -167,65 +167,85 @@
         }
 
         /* Product Familiarity Section */
-        .product-section {
-            padding: 60px 40px;
-            background-color: #f5f5f5;
-        }
-        .product-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .subtitle {
-            font-size: 1.125rem;
-            color: #1a1a1a;
-            margin-bottom: 3rem;
-        }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            border-left: 6px solid #8B0000;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
-        .logo-container {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        .logo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .product-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 0.75rem;
-        }
-        .product-features {
-            font-size: 1rem;
-            color: #4a4a4a;
-            margin-bottom: 0;
-        }
+.product-section {
+    padding: 60px 40px;
+    background-color: #f5f5f5;
+}
+.product-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.subtitle {
+    font-size: 1.125rem;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #8B0000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    min-height: 280px;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+.logo-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.product-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+.product-features {
+    font-size: 1rem;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+@media (max-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
         /* Newsletter Section */
         .newsletter-section {
@@ -576,86 +596,77 @@
     </section>
 
     <!-- Product Familiarity Section -->
-    <section class="product-section">
-        <div class="product-container">
-            <h2 class="section-title">Product Familiarity</h2>
-            <p class="subtitle">Products explored from workflow, business, and user perspectives.</p>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="logo-container">
-                        <img src="https://www.zoho.com/crm/lp/images/v2/zoho-crm-logo.png" alt="Zoho CRM">
-                    </div>
-                    <h3 class="product-title">Zoho CRM</h3>
-                    <p class="product-features">Leads · Sales · Lifecycle</p>
+<section class="product-section">
+    <div class="product-container">
+        <h2 class="section-title">Product Familiarity</h2>
+        <p class="subtitle">Products explored from workflow, business, and user perspectives.</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="logo-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrzmJmymez08r7s9aRVCsh5JJ2JfG0U6mpSw&s" alt="Zoho CRM">
                 </div>
+                <h3 class="product-title">Zoho CRM</h3>
+                <p class="product-features">Leads · Sales · Lifecycle</p>
+            </div>
 
-                <div class="product-card">
-                    <div class="logo-container">
-                        <img src="https://www.zoho.com/sheet/images/zoho-sheet-logo.png" alt="Zoho Sheets">
-                    </div>
-                    <h3 class="product-title">Zoho Sheets</h3>
-                    <p class="product-features">Data · Analysis</p>
+            <div class="product-card">
+                <div class="logo-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAZ67dG4vr6AleCDMTVdSXCXSPrr0SgRM8Uw&s" alt="Zoho Sheets">
                 </div>
+                <h3 class="product-title">Zoho Sheets</h3>
+                <p class="product-features">Data · Analysis</p>
+            </div>
 
-                <div class="product-card">
-                    <div class="logo-container">
-                        <img src="https://www.zoho.com/projects/images/zoho-projects-logo.png" alt="Zoho Projects">
-                    </div>
-                    <h3 class="product-title">Zoho Projects</h3>
-                    <p class="product-features">Planning · Tasks</p>
+            <div class="product-card">
+                <div class="logo-container">
+                    <img src="https://avatars.slack-edge.com/2017-12-19/289199347795_4c3aa938f413b9845d4f_512.png" alt="Zoho Projects">
                 </div>
+                <h3 class="product-title">Zoho Projects</h3>
+                <p class="product-features">Planning · Tasks</p>
+            </div>
 
-                <div class="product-card">
-                    <div class="logo-container">
-                        <img src="https://www.zoho.com/marketingautomation/images/zoho-marketing-automation-logo.png" alt="Zoho Marketing Automation">
-                    </div>
-                    <h3 class="product-title">Zoho Marketing Automation</h3>
-                    <p class="product-features">Campaigns · Funnels</p>
+            <div class="product-card">
+                <div class="logo-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRf-Qe1RAZGKhJmjzTnKQwqTyRqP9x42nmaA&s" alt="Zoho Flow">
                 </div>
+                <h3 class="product-title">Zoho Flow</h3>
+                <p class="product-features">Integrations · Automation</p>
+            </div>
 
-                <div class="product-card">
-                    <div class="logo-container">
-                        <img src="https://www.zoho.com/flow/images/zoho-flow-logo.png" alt="Zoho Flow">
-                    </div>
-                    <h3 class="product-title">Zoho Flow</h3>
-                    <p class="product-features">Integrations · Automation</p>
+            <div class="product-card">
+                <div class="logo-container">
+                    <img src="https://pbs.twimg.com/profile_images/1749731052845953024/O1zjlWF5_400x400.png" alt="Zoho Creator">
                 </div>
+                <h3 class="product-title">Zoho Creator</h3>
+                <p class="product-features">No-code · Workflows</p>
+            </div>
 
-                <div class="product-card">
-                    <div class="logo-container">
-                        <img src="https://www.zoho.com/creator/images/zoho-creator-logo.png" alt="Zoho Creator">
-                    </div>
-                    <h3 class="product-title">Zoho Creator</h3>
-                    <p class="product-features">No-code · Workflows</p>
+            <div class="product-card">
+                <div class="logo-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuqPgu33bKh3R8YCuHmj2rF0oYI-1nJIIB7w&s" alt="Zoho Desk">
                 </div>
+                <h3 class="product-title">Zoho Desk</h3>
+                <p class="product-features">Support · SLA</p>
+            </div>
 
-                <div class="product-card">
-                    <div class="logo-container">
-                        <img src="https://www.zoho.com/desk/images/zoho-desk-logo.png" alt="Zoho Desk">
-                    </div>
-                    <h3 class="product-title">Zoho Desk</h3>
-                    <p class="product-features">Support · SLA</p>
+            <div class="product-card">
+                <div class="logo-container">
+                    <img src="https://desk.zoho.in/portal/api/kbCategory/205219000055731331/logo/6943819000000661462?orgId=60041003425" alt="Zoho Survey">
                 </div>
+                <h3 class="product-title">Zoho Survey</h3>
+                <p class="product-features">Feedback · Insights</p>
+            </div>
 
-                <div class="product-card">
-                    <div class="logo-container">
-                        <img src="https://www.zoho.com/survey/images/zoho-survey-logo.png" alt="Zoho Survey">
-                    </div>
-                    <h3 class="product-title">Zoho Survey</h3>
-                    <p class="product-features">Feedback · Insights</p>
+            <div class="product-card">
+                <div class="logo-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLYPEwqXtvkxkWdF_YrSQ0aU46RbqYGZOxg&s" alt="Zoho Forms">
                 </div>
-
-                <div class="product-card">
-                    <div class="logo-container">
-                        <img src="https://www.zoho.com/forms/images/zoho-forms-logo.png" alt="Zoho Forms">
-                    </div>
-                    <h3 class="product-title">Zoho Forms</h3>
-                    <p class="product-features">Data · Validation</p>
-                </div>
+                <h3 class="product-title">Zoho Forms</h3>
+                <p class="product-features">Data · Validation</p>
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- Newsletter Section -->
     <section class="newsletter-section">
         <div class="newsletter-container">
