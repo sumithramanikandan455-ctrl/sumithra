@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumithra Manikandan - Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --primary-dark: #6B0000;
+            --primary-light: #b30000;
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #6a6a6a;
+            --bg-light: #f8f9fa;
+            --bg-lighter: #fef5f5;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-lg: 0 8px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 100px 40px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid var(--white);
+            background-color: var(--white);
+            margin: 0 auto 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-name {
+            color: var(--white);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-tagline {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Containers */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section-alt {
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            color: var(--text-dark);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-medium);
+            font-size: 1.125rem;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-medium);
+            margin-bottom: 2rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: var(--white);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Featured Work Grid */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .work-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            height: 320px;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+            z-index: 2;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 3;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .card-category {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .card-link {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .card-link::after {
+            content: '→';
+            transition: var(--transition);
+        }
+
+        .card-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Product Familiarity */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e5e5e5;
+            transition: var(--transition);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .logo-container {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-features {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        /* Newsletter Section */
+        .newsletter-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            max-width: 900px;
+            margin: 2rem auto 0;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .newsletter-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .newsletter-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.9) 0%, rgba(107, 0, 0, 0.85) 100%);
+            z-index: 2;
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 3;
+            padding: 4rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .newsletter-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-description {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 0.875rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Work Archive */
+        .archive-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            color: var(--text-dark);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .archive-card {
+            background: var(--white);
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .archive-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .archive-card-title {
+            color: var(--text-dark);
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .archive-card:hover .archive-card-title {
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .contact-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+            padding: 0.875rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-item:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 2rem 40px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.75rem 0;
+            }
+
+            .nav-container {
+                padding: 0 20px;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero-section {
+                padding: 60px 20px 50px;
+            }
+
+            .hero-name {
+                font-size: 2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .work-grid,
+            .archive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .newsletter-content {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .newsletter-title {
+                font-size: 2rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">SM</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-photo">
+                <img src="https://raw.githubusercontent.com/sumithramanikandan455-ctrl/sumithra/main/Sumi.png" alt="Sumithra Manikandan">
+            </div>
+            <h1 class="hero-name">Sumithra Manikandan</h1>
+            <p class="hero-tagline">Product Strategy • Marketing • Operations</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About</h2>
+            </div>
+            <div class="about-content">
+                <p class="about-text">
+                    I work across product thinking, marketing strategy, and execution. My experience includes market sizing (TAM, SAM, SOM), positioning, and problem-solution validation, along with hands-on work in no-code applications, CRM workflows, and process design. I focus on understanding user behavior beyond demographics and turning research, content, and data into clear product decisions and effective campaigns.
+                </p>
+                <div class="skills-container">
+                    <span class="skill-tag">Product Strategy</span>
+                    <span class="skill-tag">Market Analysis</span>
+                    <span class="skill-tag">No-Code Development</span>
+                    <span class="skill-tag">CRM Workflows</span>
+                    <span class="skill-tag">Marketing Research</span>
+                    <span class="skill-tag">Content Strategy</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section id="work" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">A selection of projects demonstrating product thinking, marketing strategy, and operational execution</p>
+            </div>
+            <div class="work-grid">
+                <div class="work-card" onclick="window.open('https://workdrive.zohopublic.in/writer/open/095h546bc357b65594124a0a9145d8e5ddd83', '_blank')">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="card-category">Marketing Strategy</span>
+                        <h3 class="card-title">TAM · SAM · SOM</h3>
+                        <p class="card-description">Market sizing and purpose-led positioning framework</p>
+                        <a href="https://workdrive.zohopublic.in/writer/open/095h546bc357b65594124a0a9145d8e5ddd83" class="card-link">View Presentation</a>
+                    </div>
+                </div>
+
+                <div class="work-card" onclick="window.open('https://workdrive.zohopublic.in/writer/open/rgnwx36b5490d0c2d423d8904add41ec16689', '_blank')">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="card-category">Product Management</span>
+                        <h3 class="card-title">Business Model Canvas</h3>
+                        <p class="card-description">Problem-solution fit and business viability analysis</p>
+                        <a href="https://workdrive.zohopublic.in/writer/open/rgnwx36b5490d0c2d423d8904add41ec16689" class="card-link">View Document</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="card-category">Product Thinking</span>
+                        <h3 class="card-title">Novel November Promotions</h3>
+                        <p class="card-description">Promotions POC for 30-day novel writing challenge</p>
+                        <a href="#" class="card-link">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="work-card" onclick="window.open('https://workdrive.zohoexternal.in/folder/thbd6de07f2d13c4f4d54b6125c3b4d3a8ad1', '_blank')">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="card-category">Marketing Research</span>
+                        <h3 class="card-title">Psychographic Analysis</h3>
+                        <p class="card-description">Customer behavior research beyond demographics</p>
+                        <a href="https://workdrive.zohoexternal.in/folder/thbd6de07f2d13c4f4d54b6125c3b4d3a8ad1" class="card-link">Read Research</a>
+                    </div>
+                </div>
+
+                <div class="work-card" onclick="window.open('https://workdrive.zohopublic.in/show/open/a8gel6b096cb73bd7466e8f0270ee55c7240b', '_blank')">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1523726491678-bf852e717f6a?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="card-category">Product · Marketing</span>
+                        <h3 class="card-title">ColourQuill</h3>
+                        <p class="card-description">Product ideation challenge (Shark Tank style)</p>
+                        <a href="https://workdrive.zohopublic.in/show/open/a8gel6b096cb73bd7466e8f0270ee55c7240b" class="card-link">View Pitch</a>
+                    </div>
+                </div>
+
+                <div class="work-card" onclick="window.open('https://workdrive.zohoexternal.in/folder/4xs0ra95f770c55fe4e63a804f86d6a8daf1c', '_blank')">
+                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="card-category">No-Code · Operations</span>
+                        <h3 class="card-title">Tradeshow Solutions</h3>
+                        <p class="card-description">Conference room booking & gate pass applications</p>
+                        <a href="https://workdrive.zohoexternal.in/folder/4xs0ra95f770c55fe4e63a804f86d6a8daf1c" class="card-link">View Summary</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Familiarity Section -->
+    <section id="products" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Product Familiarity</h2>
+                <p class="section-subtitle">Products explored from workflow, business, and user perspectives</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrzmJmymez08r7s9aRVCsh5JJ2JfG0U6mpSw&s" alt="Zoho CRM">
+                    </div>
+                    <h3 class="product-title">Zoho CRM</h3>
+                    <p class="product-features">Leads · Sales · Lifecycle</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAZ67dG4vr6AleCDMTVdSXCXSPrr0SgRM8Uw&s" alt="Zoho Sheets">
+                    </div>
+                    <h3 class="product-title">Zoho Sheets</h3>
+                    <p class="product-features">Data · Analysis</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://avatars.slack-edge.com/2017-12-19/289199347795_4c3aa938f413b9845d4f_512.png" alt="Zoho Projects">
+                    </div>
+                    <h3 class="product-title">Zoho Projects</h3>
+                    <p class="product-features">Planning · Tasks</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRf-Qe1RAZGKhJmjzTnKQwqTyRqP9x42nmaA&s" alt="Zoho Flow">
+                    </div>
+                    <h3 class="product-title">Zoho Flow</h3>
+                    <p class="product-features">Integrations · Automation</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://pbs.twimg.com/profile_images/1749731052845953024/O1zjlWF5_400x400.png" alt="Zoho Creator">
+                    </div>
+                    <h3 class="product-title">Zoho Creator</h3>
+                    <p class="product-features">No-code · Workflows</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuqPgu33bKh3R8YCuHmj2rF0oYI-1nJIIB7w&s" alt="Zoho Desk">
+                    </div>
+                    <h3 class="product-title">Zoho Desk</h3>
+                    <p class="product-features">Support · SLA</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://desk.zoho.in/portal/api/kbCategory/205219000055731331/logo/6943819000000661462?orgId=60041003425" alt="Zoho Survey">
+                    </div>
+                    <h3 class="product-title">Zoho Survey</h3>
+                    <p class="product-features">Feedback · Insights</p>
+                </div>
+
+                <div class="product-card">
+                    <div class="logo-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLYPEwqXtvkxkWdF_YrSQ0aU46RbqYGZOxg&s" alt="Zoho Forms">
+                    </div>
+                    <h3 class="product-title">Zoho Forms</h3>
+                    <p class="product-features">Data · Validation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Newsletter Contributions</h2>
+            </div>
+            <div class="newsletter-card">
+                <div class="newsletter-background"></div>
+                <div class="newsletter-overlay"></div>
+                <div class="newsletter-content">
+                    <h3 class="newsletter-title">Tharuvai Monthly Bulletin</h3>
+                    <p class="newsletter-description">Written contributions explaining campus events, tools, and features for Zoho Schools' monthly publication</p>
+                    <a href="https://workdrive.zohoexternal.in/folder/6ldvi31ff7ef3807041e1a836266d5a188bc3" class="btn-primary">Read My Articles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Archive Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work Archive</h2>
+                <p class="section-subtitle">A comprehensive collection of projects and deliverables</p>
+            </div>
+
+            <div class="archive-category">
+                <h3 class="category-title">Marketing & Analysis</h3>
+                <div class="archive-grid">
+                    <a href="https://writer.zoho.in/writer/open/095h5406081dbc2414b219b5fe745f2e1d95e" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">Competitor Analysis</h4>
+                    </a>
+                    <a href="https://writer.zoho.in/writer/open/mqrrn0e66e24d4ecb468fbc769b2eaedcef7d" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">Counter Campaign Strategy</h4>
+                    </a>
+                    <a href="https://workdrive.zohopublic.in/writer/open/iwnojb7ccecd63e2643dd91544596b5f2a27a" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">Deprecation</h4>
+                    </a>
+                </div>
+            </div>
+
+            <div class="archive-category">
+                <h3 class="category-title">Content Writing</h3>
+                <div class="archive-grid">
+                    <a href="https://workdrive.zohopublic.in/writer/open/095h58b4c2840ae614ef6bd18742cf5d57e0c" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">Story Writing</h4>
+                    </a>
+                    <a href="https://workdrive.zohopublic.in/writer/open/36v9ia86218863cda44218e0b24de50c586cb" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">AI's Impact on Grammarly</h4>
+                    </a>
+                    <a href="https://workdrive.zohopublic.in/writer/open/095h56a8a06d6ff3c4032b5643c8bb97492ab" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">CIBIL Score</h4>
+                    </a>
+                </div>
+            </div>
+
+            <div class="archive-category">
+                <h3 class="category-title">SEO & Digital Marketing</h3>
+                <div class="archive-grid">
+                    <a href="https://workdrive.zohopublic.in/writer/open/funmm80d99a02a21f4b57a5ad79e3c467a22c" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">SEO Research Document</h4>
+                    </a>
+                    <a href="https://www.canva.com/design/DAG7QwFM0oA/VPmu6zE0_1rebhY7aBMaoQ/edit" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">SEO Key Terms</h4>
+                    </a>
+                    <a href="https://workdrive.zohopublic.in/show/open/d7e0v57cbcc9826aa4afd8a296cf20e013930" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">SEO Redirects & Googlebots</h4>
+                    </a>
+                    <a href="https://www.canva.com/design/DAG6SLeTz4I/LwFs8vbKy4e66d6solzhFQ/edit" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">SEO Redirects</h4>
+                    </a>
+                    <a href="https://workdrive.zohopublic.in/show/open/ox9a1e48f7fc914ff483d91a713df3adfe57e" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">Data & SEO</h4>
+                    </a>
+                </div>
+            </div>
+
+            <div class="archive-category">
+                <h3 class="category-title">Security & Privacy</h3>
+                <div class="archive-grid">
+                    <a href="https://workdrive.zohoexternal.in/folder/6ldvi68f88d8332c643e587ee2b0fd905bc8e" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">Chrome DNT</h4>
+                    </a>
+                    <a href="https://workdrive.zohopublic.in/writer/open/vi8n7d5a84a9c3a3a42feb03bee5e79ac7d2d" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">IAM</h4>
+                    </a>
+                    <a href="https://workdrive.zohopublic.in/writer/open/6ldvi23f9fa7680ec49e4ae49779afd70d109" target="_blank" class="archive-card">
+                        <h4 class="archive-card-title">MFA</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <h2 class="contact-title">Let's Connect</h2>
+            <p class="contact-text">Interested in collaborating or discussing product and marketing opportunities?</p>
+            <div class="contact-links">
+                <a href="mailto:sumithramanikandan455@gmail.com" class="contact-item">Email Me</a>
+                <a href="https://www.linkedin.com/in/sumithra-manikandan-789163360" target="_blank" class="contact-item">LinkedIn</a>
+                <a href="tel:+1234567890" class="contact-item">Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Sumithra Manikandan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
