@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tara Srinivasan | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <img src="./Sumi.png" alt="Tara Srinivasan" />
+    <h1>Tara Srinivasan</h1>
+    <p>Digital Marketing & Data Enthusiast</p>
+</header>
+
+<!-- MARKETING & ANALYSIS -->
+<section class="archive-section">
+    <h2>Marketing & Analysis</h2>
+
+    <div class="archive-grid">
+        <div class="archive-card">
+            <h4 class="archive-card-title">Competitor Analysis</h4>
+            <p class="archive-card-desc">
+                Evaluated competitor positioning, feature differentiation, and market gaps.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+
+        <div class="archive-card">
+            <h4 class="archive-card-title">Counter Campaign Strategy</h4>
+            <p class="archive-card-desc">
+                Designed strategic responses to neutralize competing brand campaigns.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+
+        <div class="archive-card">
+            <h4 class="archive-card-title">Deprecation</h4>
+            <p class="archive-card-desc">
+                Studied feature removal impact on users, engagement, and retention.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTENT WRITING -->
+<section class="archive-section">
+    <h2>Content Writing</h2>
+
+    <div class="archive-grid">
+        <div class="archive-card">
+            <h4 class="archive-card-title">Story Writing</h4>
+            <p class="archive-card-desc">
+                Crafted narrative-driven content focused on emotional engagement.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+
+        <div class="archive-card">
+            <h4 class="archive-card-title">AI's Impact on Grammarly</h4>
+            <p class="archive-card-desc">
+                Analyzed AI-driven writing assistance and language correction trends.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+
+        <div class="archive-card">
+            <h4 class="archive-card-title">CIBIL Score</h4>
+            <p class="archive-card-desc">
+                Explained credit scoring systems and their financial implications.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+    </div>
+</section>
+
+<!-- SEO & DATA -->
+<section class="archive-section">
+    <h2>SEO & Data</h2>
+
+    <div class="archive-grid">
+        <div class="archive-card">
+            <h4 class="archive-card-title">SEO Research Document</h4>
+            <p class="archive-card-desc">
+                Conducted keyword, competitor, and on-page SEO research.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+
+        <div class="archive-card">
+            <h4 class="archive-card-title">SEO Key Terms</h4>
+            <p class="archive-card-desc">
+                Compiled and explained essential SEO terminology.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+
+        <div class="archive-card">
+            <h4 class="archive-card-title">Data & SEO</h4>
+            <p class="archive-card-desc">
+                Applied data insights to optimize search performance.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+    </div>
+</section>
+
+<!-- SECURITY & PRIVACY -->
+<section class="archive-section">
+    <h2>Security & Privacy</h2>
+
+    <div class="archive-grid">
+        <div class="archive-card">
+            <h4 class="archive-card-title">Chrome DNT</h4>
+            <p class="archive-card-desc">
+                Studied browser-level tracking control mechanisms.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+
+        <div class="archive-card">
+            <h4 class="archive-card-title">IAM</h4>
+            <p class="archive-card-desc">
+                Analyzed identity and access management systems.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+
+        <div class="archive-card">
+            <h4 class="archive-card-title">MFA</h4>
+            <p class="archive-card-desc">
+                Evaluated multi-factor authentication for enhanced security.
+            </p>
+            <a href="#" target="_blank"></a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
