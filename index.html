@@ -1,846 +1,403 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smithra Manikandan - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #ffffff;
-            color: #1a1a1a;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, #8B0000 0%, #6B0000 100%);
-            padding: 80px 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-photo {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 6px solid #ffffff;
-            background-color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .hero-name {
-            color: #ffffff;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        /* About Section */
-        .about-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 40px;
-        }
-
-        .section-title {
-            color: #8B0000;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .about-text {
-            font-size: 1.125rem;
-            line-height: 1.6;
-            color: #1a1a1a;
-        }
-
-        /* Featured Work Section */
-        .featured-section {
-            background-color: #fef5f5;
-            padding: 60px 40px;
-        }
-
-        .featured-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .work-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-left: 6px solid #8B0000;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            height: 280px;
-            cursor: pointer;
-        }
-
-        .work-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-        }
-
-        .card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.5) 100%);
-            z-index: 2;
-        }
-
-        .card-content {
-            position: relative;
-            z-index: 3;
-            padding: 2rem;
-            text-align: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-subtitle {
-            font-size: 0.9rem;
-            color: #e0e0e0;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-description {
-            font-size: 0.95rem;
-            color: #f0f0f0;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .card-link {
-            color: #ff6b6b;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
-
-        .card-link:hover {
-            color: #ff5252;
-        }
-		/* Product Familiarity Section */
-.product-section {
-    padding: 60px 40px;
-    background-color: #f5f5f5;
-}
-.product-container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-.subtitle {
-    font-size: 1.125rem;
-    color: #1a1a1a;
-    margin-bottom: 3rem;
-}
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-}
-.product-card {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    border-left: 6px solid #8B0000;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1;
-    min-height: 280px;
-}
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-.logo-container {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-.logo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-.product-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 0.75rem;
-}
-.product-features {
-    font-size: 1rem;
-    color: #4a4a4a;
-    margin: 0;
-}
-
-@media (max-width: 1200px) {
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 900px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-        /* Newsletter Section */
-        .newsletter-section {
-            padding: 60px 40px;
-            background-color: #ffffff;
-        }
-
-        .newsletter-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .content-card {
-            background-image: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .content-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.6) 100%);
-            z-index: 1;
-        }
-
-        .content-inner {
-            position: relative;
-            z-index: 2;
-            padding: 4rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            flex: 1;
-        }
-
-        .header-section {
-            margin-bottom: 3rem;
-        }
-
-        .newsletter-title {
-            color: #ffffff;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .newsletter-subtitle {
-            font-size: 1.3rem;
-            color: #f0f0f0;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-            margin-bottom: 4rem;
-        }
-
-        .article-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 8px;
-            padding: 3rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .article-title {
-            color: #8B0000;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .article-description {
-            color: #4a4a4a;
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        .article-link {
-            color: #8B0000;
-            font-weight: 600;
-            font-size: 1.125rem;
-            text-decoration: none;
-            display: inline-block;
-            transition: color 0.3s ease;
-        }
-
-        .article-link:hover {
-            color: #b30000;
-            text-decoration: underline;
-        }
-         /* Work Archive Section */
-        .archive-section {
-            padding: 60px 40px;
-            background-color: #f5f5f5;
-        }
-
-        .archive-container {
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .category-section {
-            margin-bottom: 4rem;
-        }
-
-        .category-title {
-            color: #1a1a1a;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .archive-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .archive-card {
-            background: white;
-            border: 3px solid #8B0000;
-            border-radius: 12px;
-            padding: 2rem;
-            min-height: 280px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .archive-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .archive-card-title {
-            color: #8B0000;
-            font-size: 1.3rem;
-            font-weight: 600;
-            text-align: center;
-			pointer-events: none;
-        }
-		 /* Work Archive Section */
-        .archive-section {
-            padding: 60px 40px;
-            background-color: #f5f5f5;
-        }
-
-        .archive-container {
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .category-section {
-            margin-bottom: 4rem;
-        }
-
-        .category-title {
-            color: #1a1a1a;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .archive-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .archive-card {
-            background: white;
-            border: 3px solid #8B0000;
-            border-radius: 12px;
-            padding: 2rem;
-            min-height: 280px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .archive-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .archive-card-title {
-            color: #8B0000;
-            font-size: 1.3rem;
-            font-weight: 600;
-            text-align: center;
-			pointer-events: none;
-        }
-
-		
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(135deg, #8B0000 0%, #6B0000 100%);
-            padding: 80px 40px;
-            text-align: center;
-            border-radius: 12px;
-            margin: 60px 40px;
-        }
-
-        .contact-title {
-            color: #ffffff;
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-item {
-            color: #ffffff;
-            font-size: 1.3rem;
-            text-decoration: none;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-3px);
-            opacity: 0.8;
-        }
-
-        .separator {
-            color: #ffffff;
-            font-size: 1.3rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .product-grid,
-            .archive-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-section,
-            .about-section,
-            .featured-section,
-            .product-section,
-            .newsletter-section,
-            .archive-section {
-                padding: 40px 20px;
-            }
-
-            .hero-name {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .work-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-grid,
-            .archive-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .newsletter-title {
-                font-size: 2.5rem;
-            }
-
-            .content-inner {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .contact-section {
-                margin: 40px 20px;
-                padding: 60px 20px;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .separator {
-                display: none;
-            }
-        }
-    </style>
+<!-- saved from url=(0057)file:///Users/sumithra-zsbth011/work/portfolio/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumithra Manikandan - Product marketing &amp; research</title>
+<meta name="description" content="Sumithra Manikandan's portfolio: positioning, go-to-market, buyer research, and organic search analysis across the Zoho ecosystem.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Sumithra Manikandan - Product marketing &amp; research_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3ECDD;
+    --paper-dim:#E8DFC9;
+    --paper-card:#FBF8F0;
+    --ink:#262042;
+    --ink-soft:#5B5578;
+    --ink-faint:#8B84A0;
+    --line:#D9CCA8;
+    --teal:#1D6B5E;
+    --teal-deep:#124A41;
+    --rose:#9C3D42;
+    --dark:#1B1730;
+    --dark-text:#EFE7D4;
+    --dark-line:#423A5E;
+    --sidebar-w:252px;
+    --content-max:860px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Archivo',-apple-system,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif}
+
+  .layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;align-items:start}
+  .content{min-width:0}
+  .block{max-width:var(--content-max);padding:72px 40px}
+  @media(max-width:1180px){.content .block{max-width:none}}
+  @media(max-width:900px){.layout{display:block}.block{padding:56px 24px}}
+
+  /* Sidebar index */
+  .index{position:sticky;top:0;height:100vh;padding:40px 28px;display:flex;flex-direction:column;border-right:1px solid var(--line)}
+  .index-brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;color:var(--ink);text-decoration:none;margin-bottom:6px;display:block}
+  .index-role{font-size:.78rem;color:var(--ink-faint);margin-bottom:40px;line-height:1.5}
+  .index-list{list-style:none;display:flex;flex-direction:column;gap:2px;flex:1}
+  .index-list a{display:flex;gap:12px;align-items:baseline;text-decoration:none;font-size:.88rem;color:var(--ink-soft);padding:9px 0;border-bottom:1px solid transparent}
+  .index-list a:hover{color:var(--ink)}
+  .index-list .num{font-family:'Fraunces',serif;font-style:italic;font-size:.78rem;color:var(--ink-faint);min-width:16px}
+  .index-foot{font-size:.76rem;color:var(--ink-faint);padding-top:20px;border-top:1px solid var(--line)}
+  @media(max-width:900px){
+    .index{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:18px 24px;display:block}
+    .index-role{display:none}
+    .index-list{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:2px 22px;margin-top:14px;padding-bottom:4px}
+    .index-list li{flex-shrink:0}
+    .index-list a{padding:4px 0;white-space:nowrap}
+    .index-list .num{display:none}
+    .index-foot{display:none}
+  }
+
+  /* Hero */
+  .hero{padding-top:92px}
+  .hero-grid{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+  .hero-photo{width:148px;height:184px;object-fit:cover;filter:grayscale(.15) sepia(.08);border:1px solid var(--line)}
+  .hero h1{font-size:clamp(2.6rem,5.2vw,4.1rem);font-weight:600;letter-spacing:-.01em;line-height:1.02;margin-bottom:22px}
+  .hero .role{font-size:1.02rem;color:var(--teal-deep);font-weight:500;margin-bottom:16px}
+  .hero .dek{font-size:1.04rem;color:var(--ink-soft);max-width:58ch;margin-bottom:36px}
+  .stamp-row{display:flex;gap:14px;flex-wrap:wrap}
+  .stamp{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;font-family:'Archivo',sans-serif;font-weight:600;font-size:.88rem;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);transition:background .2s,color .2s}
+  .stamp:hover{background:var(--ink);color:var(--paper)}
+  .stamp.fill{background:var(--teal);border-color:var(--teal);color:var(--paper-card)}
+  .stamp.fill:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
+  @media(max-width:620px){.hero-grid{grid-template-columns:1fr}.hero-photo{display:none}}
+
+  /* Section headings */
+  .dek-head{max-width:62ch;margin-bottom:40px}
+  .dek-head h2{font-size:clamp(1.55rem,2.8vw,2rem);font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
+  .dek-head p{font-size:.98rem;color:var(--ink-soft)}
+
+  /* What I bring */
+  .brief-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:44px;align-items:start}
+  .pill-list{display:flex;flex-wrap:wrap;gap:8px 10px}
+  .pill{font-size:.84rem;color:var(--ink-soft);border:1px solid var(--line);padding:7px 14px}
+  .facts{border-top:1px solid var(--line)}
+  .facts li{list-style:none;padding:15px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:168px 1fr;gap:16px;font-size:.92rem}
+  .facts li span:first-child{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-faint)}
+  .facts li span:last-child{color:var(--ink)}
+  @media(max-width:860px){.brief-grid{grid-template-columns:1fr;gap:28px}.facts li{grid-template-columns:1fr;gap:3px}}
+
+  /* Index cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .cards.two{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:640px){.cards,.cards.two{grid-template-columns:1fr}}
+  .card{background:var(--paper-card);padding:28px 26px;display:flex;flex-direction:column}
+  .card .tag{font-family:'Fraunces',serif;font-style:italic;font-size:.88rem;color:var(--rose);margin-bottom:12px}
+  .card h3{font-size:1.07rem;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.3}
+  .card p{font-size:.92rem;color:var(--ink-soft);flex:1;margin-bottom:20px}
+  .card a.more{font-weight:600;font-size:.86rem;color:var(--teal-deep);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px;margin-top:auto}
+  .card a.more:hover{color:var(--teal)}
+  .card.lead{background:var(--paper-dim);border-left:3px solid var(--teal)}
+  .card.lead h3{font-size:1.25rem}
+  .cards.two .card:last-child:nth-child(odd){grid-column:span 2}
+  .cards:not(.two) .card:last-child:nth-child(3n+2){grid-column:span 2}
+
+  /* Tools */
+  .tool-group{margin-bottom:42px}
+  .tool-group:last-child{margin-bottom:0}
+  .tool-group h3{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:1.05rem;color:var(--ink);margin-bottom:18px}
+  .tool-rows{border-top:1px solid var(--line)}
+  .tool-row{display:flex;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .tool-row .logo{width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .tool-row .logo img{width:100%;height:100%;object-fit:contain}
+  .tool-row .logo.ini{background:var(--paper-dim);color:var(--ink-soft);font-size:.72rem;font-weight:700;border-radius:3px}
+  .tool-row h4{font-size:.95rem;font-weight:600;flex:0 0 auto;min-width:200px}
+  .tool-row span{font-size:.85rem;color:var(--ink-faint)}
+  @media(max-width:620px){.tool-row{flex-wrap:wrap;gap:10px 18px}.tool-row h4{min-width:0}}
+
+  /* Writing */
+  .write-list{border-top:1px solid var(--line)}
+  .write{display:flex;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+  .write .n{font-family:'Fraunces',serif;font-style:italic;color:var(--ink-faint);font-size:.88rem;flex-shrink:0;width:20px}
+  .write .cat{font-size:.78rem;color:var(--rose);flex-shrink:0;width:140px}
+  .write h4{font-size:.95rem;font-weight:500;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+  .write:hover h4{text-decoration-color:var(--teal);color:var(--teal-deep)}
+  @media(max-width:620px){.write{flex-wrap:wrap;gap:4px 18px}.write .cat{width:auto}}
+
+  /* Contact (closing, dark) */
+  .contact{background:var(--dark);color:var(--dark-text)}
+  .contact .dek-head p{color:#C9BFE0}
+  .contact h2{color:var(--dark-text)}
+  .contact-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+  .contact .stamp{border-color:var(--dark-text);color:var(--dark-text)}
+  .contact .stamp:hover{background:var(--dark-text);color:var(--dark)}
+  .contact .stamp.fill{background:var(--teal);border-color:var(--teal);color:#fff}
+  .contact .stamp.fill:hover{background:#2a8a79;border-color:#2a8a79}
+
+  footer{padding:26px 40px;text-align:center;font-size:.8rem;color:var(--ink-faint)}
+</style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-photo"><img src="https://raw.githubusercontent.com/sumithramanikandan455-ctrl/sumithra/main/Sumi.png" alt="Sumithra Manikandan" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"> </div>
-        <div class="hero-name">Sumithra Manikandan</div>
+
+<div class="layout">
+  <aside class="index">
+    <a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#top" class="index-brand">Sumithra Manikandan</a>
+    <p class="index-role">Product marketing, market research &amp; organic search analysis</p>
+    <ul class="index-list">
+      <li><a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#brief"><span class="num">1</span> What I bring</a></li>
+      <li><a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#gtm"><span class="num">2</span> Positioning &amp; GTM</a></li>
+      <li><a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#research"><span class="num">3</span> Campaigns &amp; research</a></li>
+      <li><a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#growth"><span class="num">4</span> Organic search</a></li>
+      <li><a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#tools"><span class="num">5</span> Tools</a></li>
+      <li><a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#writing"><span class="num">6</span> Writing</a></li>
+      <li><a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#contact"><span class="num">7</span> Contact</a></li>
+    </ul>
+    <p class="index-foot">Based in Chennai, trained across Zoho's product and marketing teams</p>
+  </aside>
+
+  <div class="content">
+
+    <header class="hero block" id="top">
+      <div class="hero-grid">
+        <div>
+          <p class="role">Product marketing, market research &amp; organic search</p>
+          <h1>Sumithra<br>Manikandan</h1>
+          <p class="dek">I turn research and search data into positioning, campaigns, and decisions people can act on. Trained across Zoho's product, marketing, and digital marketing teams - and increasingly curious about how AI is changing where people search.</p>
+          <div class="stamp-row">
+            <a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#gtm" class="stamp fill">View my work</a>
+            <a href="file:///Users/sumithra-zsbth011/work/portfolio/index.html#contact" class="stamp">Get in touch</a>
+          </div>
+        </div>
+        <img class="hero-photo" src="./Sumithra Manikandan - Product marketing &amp; research_files/Sumi.png" alt="Sumithra Manikandan">
+      </div>
+    </header>
+
+    <section class="block" id="brief">
+      <div class="brief-grid">
+        <div>
+          <div class="dek-head">
+            <h2>What I bring</h2>
+            <p>Research, positioning, and search analysis, grounded in real product and marketing work at Zoho.</p>
+          </div>
+          <div class="pill-list">
+            <span class="pill">Positioning</span>
+            <span class="pill">Market sizing</span>
+            <span class="pill">Competitive intelligence</span>
+            <span class="pill">Buyer research</span>
+            <span class="pill">Campaign execution</span>
+            <span class="pill">CRM &amp; pipeline tools</span>
+            <span class="pill">Organic search analysis</span>
+            <span class="pill">Content writing</span>
+          </div>
+        </div>
+        <ul class="facts">
+          <li><span>Product &amp; marketing</span><span>TAM / SAM / SOM, Business Model Canvas, positioning, competitor analysis, psychographic research</span></li>
+          <li><span>Digital marketing</span><span>SEO, ASO, GEO best practices, AI SEO (llms.txt and MD files)</span></li>
+          <li><span>Analysis</span><span>GSC performance diagnostics, content gap analysis, site audit, crawl budget, SEO migration</span></li>
+          <li><span>Products worked on</span><span>Zoho Expense, Zoho Assist, Zoho Lens, Zoho RPA, Zoho Analytics, ManageEngine Endpoint Central and UEMS</span></li>
+          <li><span>No-code &amp; CRM</span><span>Zoho Creator apps, Zoho Flow automations, CRM workflows</span></li>
+          <li><span>Writing</span><span>Tharuvai monthly bulletin, Zoho Schools</span></li>
+        </ul>
+      </div>
     </section>
 
-    <!-- About Section -->
-<section class="about-section">
-    <h1 class="section-title">About</h1>
-    <p class="about-text">I work across product thinking, marketing strategy, and execution.My experience includes market sizing (TAM, SAM, SOM), positioning, and problem-solution validation, along with hands-on work in no-code applications, CRM workflows, and process design.I focus on understanding user behavior beyond demographics and turning research, content, and data into clear product decisions and effective campaigns.</p>
-</section>
-
-    <!-- Featured Work Section -->
-    <section class="featured-section">
-        <div class="featured-container">
-            <h2 class="section-title">Featured Work</h2>
-            <div class="work-grid">
-                <div class="work-card">
-                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80');"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">TAM · SAM · SOM </h3>
-                        <p class="card-subtitle">Marketing Strategy</p>
-                        <p class="card-description">Market sizing and purpose-led positioning.</p>
-                        <a href="https://workdrive.zohopublic.in/writer/open/095h546bc357b65594124a0a9145d8e5ddd83" class="card-link">View Presentation</a>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80');"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">BMC</h3>
-                        <p class="card-subtitle">Product Management</p>
-                        <p class="card-description">Problem-solution fit and business viability.</p>
-                        <a href="https://workdrive.zohopublic.in/writer/open/rgnwx36b5490d0c2d423d8904add41ec16689" class="card-link">View Document</a>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80');"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Novel November Promotions POC</h3>
-                        <p class="card-subtitle">Product Thinking</p>
-                        <p class="card-description">I was the Promotions POC for a 30 day novel writing challenge "Novel November" </p>
-                        <a href="https://workdrive.zoho.in/folder/thbd6aaa5b6e483914877980957e286aeb39c" class="card-link">View Document</a>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80');"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">Psychographic Marketing Research</h3>
-                        <p class="card-subtitle">Marketing Research</p>
-                        <p class="card-description">Customer behaviour beyond demographics.</p>
-                        <a href="https://workdrive.zohoexternal.in/folder/thbd6de07f2d13c4f4d54b6125c3b4d3a8ad1" class="card-link">Read Research</a>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1523726491678-bf852e717f6a?w=800&q=80');"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">ColourQuill – Product Ideation</h3>
-                        <p class="card-subtitle">Product · Marketing</p>
-                        <p class="card-description">Bird Cage challenge (Shark Tank style).</p>
-                        <a href="https://workdrive.zohopublic.in/show/open/a8gel6b096cb73bd7466e8f0270ee55c7240b" class="card-link">View Pitch</a>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="card-background" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80');"></div>
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="card-title">My works for Tradeshow</h3>
-                        <p class="card-subtitle">No-Code · Operations</p>
-                        <p class="card-description">Conference room booking & gate pass apps.</p>
-                        <a href="https://workdrive.zohoexternal.in/folder/4xs0ra95f770c55fe4e63a804f86d6a8daf1c" class="card-link">View Summary</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="block" id="gtm">
+      <div class="dek-head">
+        <h2>Positioning &amp; go-to-market</h2>
+        <p>Market sizing, business models, and competitive strategy: the groundwork that decides who a product is for and how it gets presented.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="tag">Market sizing</div>
+          <h3>TAM / SAM / SOM and purpose-led positioning</h3>
+          <p>Sized the addressable market top-down and bottom-up, then built a positioning statement anchored on buyer purpose rather than features.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/writer/open/095h546bc357b65594124a0a9145d8e5ddd83" target="_blank" rel="noopener">View presentation</a>
+        </article>
+        <article class="card">
+          <div class="tag">Business model</div>
+          <h3>Business Model Canvas</h3>
+          <p>Mapped customer segments, value proposition, channels, and revenue streams to test problem-solution fit and business viability.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/writer/open/rgnwx36b5490d0c2d423d8904add41ec16689" target="_blank" rel="noopener">View document</a>
+        </article>
+        <article class="card">
+          <div class="tag">Campaign strategy</div>
+          <h3>Counter campaign strategy</h3>
+          <p>Designed a response campaign to a competitor's move, covering audience, message, channel mix, and timing.</p>
+          <a class="more" href="https://writer.zoho.in/writer/open/mqrrn0e66e24d4ecb468fbc769b2eaedcef7d" target="_blank" rel="noopener">View strategy</a>
+        </article>
+        <article class="card">
+          <div class="tag">Pitch</div>
+          <h3>ColourQuill - product ideation pitch</h3>
+          <p>A Shark Tank-style "Bird Cage" challenge: took a product idea from problem statement to pitch deck with market, model, and ask.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/show/open/a8gel6b096cb73bd7466e8f0270ee55c7240b" target="_blank" rel="noopener">View pitch</a>
+        </article>
+        <article class="card">
+          <div class="tag">Lifecycle</div>
+          <h3>Product deprecation plan</h3>
+          <p>How to retire a feature without losing customers: communication sequence, migration path, and customer-facing messaging.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/writer/open/iwnojb7ccecd63e2643dd91544596b5f2a27a" target="_blank" rel="noopener">View plan</a>
+        </article>
+      </div>
     </section>
 
-    <!-- Product Familiarity Section -->
-<section class="product-section">
-    <div class="product-container">
-        <h2 class="section-title">Product Familiarity</h2>
-        <p class="subtitle">Products explored from workflow, business, and user perspectives.</p>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="logo-container">
-                    <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrzmJmymez08r7s9aRVCsh5JJ2JfG0U6mpSw&s" alt="Zoho CRM">
-                </div>
-                <h3 class="product-title">Zoho CRM</h3>
-                <p class="product-features">Leads · Sales · Lifecycle</p>
-            </div>
-
-            <div class="product-card">
-                <div class="logo-container">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAZ67dG4vr6AleCDMTVdSXCXSPrr0SgRM8Uw&s" alt="Zoho Sheets">
-                </div>
-                <h3 class="product-title">Zoho Sheets</h3>
-                <p class="product-features">Data · Analysis</p>
-            </div>
-
-            <div class="product-card">
-                <div class="logo-container">
-                    <img src="https://avatars.slack-edge.com/2017-12-19/289199347795_4c3aa938f413b9845d4f_512.png" alt="Zoho Projects">
-                </div>
-                <h3 class="product-title">Zoho Projects</h3>
-                <p class="product-features">Planning · Tasks</p>
-            </div>
-
-            <div class="product-card">
-                <div class="logo-container">
-                    <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRf-Qe1RAZGKhJmjzTnKQwqTyRqP9x42nmaA&s" alt="Zoho Flow">
-                </div>
-                <h3 class="product-title">Zoho Flow</h3>
-                <p class="product-features">Integrations · Automation</p>
-            </div>
-
-            <div class="product-card">
-                <div class="logo-container">
-                    <img src="https://pbs.twimg.com/profile_images/1749731052845953024/O1zjlWF5_400x400.png" alt="Zoho Creator">
-                </div>
-                <h3 class="product-title">Zoho Creator</h3>
-                <p class="product-features">No-code · Workflows</p>
-            </div>
-
-            <div class="product-card">
-                <div class="logo-container">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuqPgu33bKh3R8YCuHmj2rF0oYI-1nJIIB7w&s" alt="Zoho Desk">
-                </div>
-                <h3 class="product-title">Zoho Desk</h3>
-                <p class="product-features">Support · SLA</p>
-            </div>
-
-            <div class="product-card">
-                <div class="logo-container">
-                    <img src="https://desk.zoho.in/portal/api/kbCategory/205219000055731331/logo/6943819000000661462?orgId=60041003425" alt="Zoho Survey">
-                </div>
-                <h3 class="product-title">Zoho Survey</h3>
-                <p class="product-features">Feedback · Insights</p>
-            </div>
-
-            <div class="product-card">
-                <div class="logo-container">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLYPEwqXtvkxkWdF_YrSQ0aU46RbqYGZOxg&s" alt="Zoho Forms">
-                </div>
-                <h3 class="product-title">Zoho Forms</h3>
-                <p class="product-features">Data · Validation</p>
-            </div>
-        </div>
-    </div>
-</section>
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="newsletter-container">
-            <div class="content-card">
-                <div class="content-overlay"></div>
-                <div class="content-inner">
-                    <div class="header-section">
-                        <h2 class="newsletter-title">Newsletter Contributions</h2>
-                        <p class="newsletter-subtitle">My written contributions in Tharuvai's monthly bulletin by Zoho Schools.</p>
-                    </div>
-                    <div class="article-section">
-                        <h3 class="article-title">My Articles</h3>
-                        <p class="article-description">Explaining campus events, tools, and features.</p>
-                        <a href="https://workdrive.zohoexternal.in/folder/6ldvi31ff7ef3807041e1a836266d5a188bc3" class="article-link">Read</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="block" id="research">
+      <div class="dek-head">
+        <h2>Campaigns &amp; buyer research</h2>
+        <p>Understanding what buyers want before they say it, and running the campaigns that reach them.</p>
+      </div>
+      <div class="cards two">
+        <article class="card lead">
+          <div class="tag">Promotions lead</div>
+          <h3>Novel November - 30-day writing challenge</h3>
+          <p>Promotions point of contact for a month-long novel writing challenge: owned the promotion calendar, channel messaging, and participant communication from launch to close.</p>
+          <a class="more" href="https://workdrive.zoho.in/folder/thbd6aaa5b6e483914877980957e286aeb39c" target="_blank" rel="noopener">View campaign folder</a>
+        </article>
+        <article class="card">
+          <div class="tag">Buyer research</div>
+          <h3>Psychographic marketing research</h3>
+          <p>Segmented customers by values, motivations, and behaviour instead of demographics, and translated it into messaging angles.</p>
+          <a class="more" href="https://workdrive.zohoexternal.in/folder/thbd6de07f2d13c4f4d54b6125c3b4d3a8ad1" target="_blank" rel="noopener">Read research</a>
+        </article>
+        <article class="card">
+          <div class="tag">Content gap</div>
+          <h3>Content gap analysis - contracts &amp; Zoho Assist</h3>
+          <p>Compared existing content against competitors and search intent to find the questions buyers ask that we weren't answering.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/sheet/open/30yr7c66c88a912434e72bd8c4c7569616ff9" target="_blank" rel="noopener">View analysis</a>
+        </article>
+        <article class="card">
+          <div class="tag">AI search research</div>
+          <h3>Zoho RPA - prompt collection</h3>
+          <p>Gathered the questions buyers ask AI assistants about RPA, categorised by funnel stage, to guide content and improve visibility in AI search.</p>
+          <a class="more" href="https://sheet.zoho.in/sheet/open/3mth104bed63158494724b6df84ece4abc536" target="_blank" rel="noopener">View prompt set</a>
+        </article>
+        <article class="card">
+          <div class="tag">Tradeshow project</div>
+          <h3>My work for the tradeshow</h3>
+          <p>Spotted a product idea at a tradeshow and took it from concept to presentation: Business Model Canvas, model and product design, blog and website content, Zoho ecosystem integration, and giveaway ideas.</p>
+          <a class="more" href="https://workdrive.zohoexternal.in/folder/4xs0ra95f770c55fe4e63a804f86d6a8daf1c" target="_blank" rel="noopener">View summary</a>
+        </article>
+      </div>
     </section>
-</section>
-	
-  <!-- Work Archive Section -->
-    <!-- Work Archive Section -->
-    <section class="archive-section">
-        <div class="archive-container">
-            <h2 class="section-title">Other Works</h2>
-            
-            <div class="category-section">
-                <h3 class="category-title">Marketing & Analysis</h3>
-                <div class="archive-grid">
-                    <div class="archive-card">
-                        <a href="https://writer.zoho.in/writer/open/095h5406081dbc2414b219b5fe745f2e1d95e" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">Competitor Analysis</h4></a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://writer.zoho.in/writer/open/mqrrn0e66e24d4ecb468fbc769b2eaedcef7d" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">Counter Campaign Strategy</h4></a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohopublic.in/writer/open/iwnojb7ccecd63e2643dd91544596b5f2a27a" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">Deprecation</h4></a>                      
-                    </div>
-                </div>
-            </div>
-            <div class="category-section">
-                <h3 class="category-title">Content Writing</h3>
-                <div class="archive-grid">
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohopublic.in/writer/open/095h58b4c2840ae614ef6bd18742cf5d57e0c" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">Story Writing</h4> </a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohopublic.in/writer/open/36v9ia86218863cda44218e0b24de50c586cb" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">AI's Impact on Grammarly</h4></a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohopublic.in/writer/open/095h56a8a06d6ff3c4032b5643c8bb97492ab" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">CIBIL Score</h4></a>
-                    </div>
-                </div>
-            </div>
-            <div class="category-section">
-                <h3 class="category-title">SEO & Digital Marketing</h3>
-                <div class="archive-grid">
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohopublic.in/writer/open/funmm80d99a02a21f4b57a5ad79e3c467a22c" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">SEO Research Document</h4></a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://www.canva.com/design/DAG7QwFM0oA/VPmu6zE0_1rebhY7aBMaoQ/edit?utm_content=DAG7QwFM0oA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">SEO Key Terms </h4></a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohopublic.in/show/open/d7e0v57cbcc9826aa4afd8a296cf20e013930" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">SEO Redirects & Googlebots</h4></a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://show.zoho.in/show/open/2pd2w03cc6bc7de724a84acb2556a42e23a71" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">Evolution of Music (5-Year Study)</h4>
-                        </a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://www.canva.com/design/DAG6SLeTz4I/LwFs8vbKy4e66d6solzhFQ/edit?utm_content=DAG6SLeTz4I&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-"target="_blank"style="text-decoration: none;">
-                            <h4 class="archive-card-title">SEO Redirects</h4></a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohopublic.in/show/open/ox9a1e48f7fc914ff483d91a713df3adfe57e" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">Data & SEO </h4></a>
-                    </div>
-                </div>
-            </div>
-            <div class="category-section">
-                <h3 class="category-title">Security & Privacy</h3>
-                <div class="archive-grid">
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohoexternal.in/folder/6ldvi68f88d8332c643e587ee2b0fd905bc8e" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">Chrome DNT</h4></a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohopublic.in/writer/open/vi8n7d5a84a9c3a3a42feb03bee5e79ac7d2d" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">IAM</h4></a>
-                    </div>
-                    <div class="archive-card">
-                        <a href="https://workdrive.zohopublic.in/writer/open/6ldvi23f9fa7680ec49e4ae49779afd70d109" target="_blank" style="text-decoration: none;">
-                            <h4 class="archive-card-title">MFA</h4></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <section class="block" id="growth">
+      <div class="dek-head">
+        <h2>Organic search analysis</h2>
+        <p>Analysis and recommendations on organic search performance, done during six months with Zoho's digital marketing team.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="tag">GSC diagnostics</div>
+          <h3>Traffic spike analysis - ManageEngine Endpoint Central</h3>
+          <p>Compared clicks, impressions, CTR, and position across queries, pages, countries, and devices to find what caused the spike.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/sheet/open/30yr77edc8799c9b54ae1b2960b0651b4a7e4" target="_blank" rel="noopener">View analysis</a>
+        </article>
+        <article class="card">
+          <div class="tag">App store optimisation</div>
+          <h3>Zoho Expense - ASO for iOS and Google Play</h3>
+          <p>Recommended title, subtitle, keyword, and description changes to improve visibility and downloads on both stores.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/sheet/open/30yr7b2f490abf72c49d4bf1626a40dfc8293" target="_blank" rel="noopener">View recommendations</a>
+        </article>
+        <article class="card">
+          <div class="tag">Reoptimisation</div>
+          <h3>Page reoptimisations - RMM, Zoho Lens, ITAM, dashboards</h3>
+          <p>Reviewed page traffic, flagged outdated content, and realigned pages to search intent. Dashboards and data-visualisation pages done end-to-end.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/sheet/open/30yr702435fb75174414fb7ca056a164109a2" target="_blank" rel="noopener">View reoptimisation</a>
+        </article>
+        <article class="card">
+          <div class="tag">Strategy</div>
+          <h3>SEO migration playbook</h3>
+          <p>What breaks during a URL migration, how to prevent it, and a recommended approach for how Zoho should manage migrations.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/writer/open/mbzsk3bb1c232925349a69da42679a75c18d5" target="_blank" rel="noopener">View playbook</a>
+        </article>
+        <article class="card">
+          <div class="tag">Technical</div>
+          <h3>Crawl budget analysis</h3>
+          <p>Analysed Googlebot crawl requests, server response times, and indexing data to separate server limits from low-value URLs.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/writer/open/uqp6zdde8095b074d4d218a3d99c4435807c3" target="_blank" rel="noopener">View analysis</a>
+        </article>
+        <article class="card">
+          <div class="tag">Audit</div>
+          <h3>Site audit &amp; SEO research</h3>
+          <p>Technical and on-page audit with prioritised fixes, plus foundational research on keywords, redirects, and crawler behaviour.</p>
+          <a class="more" href="https://workdrive.zohopublic.in/sheet/open/527ax0be46ed34b8c46adafbfe4a3b7ba4d60" target="_blank" rel="noopener">View research</a>
+        </article>
+      </div>
     </section>
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <h2 class="contact-title">Contact</h2>
-        <div class="contact-links">
-            <a href="mailto:sumithramanikandan455@gmail.com" class="contact-item">Gmail</a>
-            <span class="separator">·</span>
-            <a href="https://www.linkedin.com/in/sumithra-manikandan-789163360" target="_blank" class="contact-item">LinkedIn</a>
-            <span class="separator">·</span>
-            <a href="tel:+1234567890" class="contact-item">Contact Number</a>
+
+    <section class="block" id="tools">
+      <div class="dek-head">
+        <h2>Tools I work in</h2>
+        <p>Explored from workflow, business, and user perspectives.</p>
+      </div>
+
+      <div class="tool-group">
+        <h3>Zoho ecosystem</h3>
+        <div class="tool-rows">
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/zoho-crm.png" alt="Zoho CRM"></div><h4>Zoho CRM</h4><span>Leads, pipeline, lifecycle</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/zoho-creator.png" alt="Zoho Creator"></div><h4>Zoho Creator</h4><span>No-code apps, workflows</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/zoho-flow.png" alt="Zoho Flow"></div><h4>Zoho Flow</h4><span>Integrations, automation</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/zoho-analytics.png" alt="Zoho Analytics"></div><h4>Zoho Analytics</h4><span>Dashboards, reporting</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/zoho-desk.png" alt="Zoho Desk"></div><h4>Zoho Desk</h4><span>Support, SLA</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/zoho-projects.png" alt="Zoho Projects"></div><h4>Zoho Projects</h4><span>Planning, tasks</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/zoho-survey.png" alt="Zoho Survey"></div><h4>Zoho Survey</h4><span>Feedback, insights</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/zoho-sheet.png" alt="Zoho Sheet"></div><h4>Zoho Sheet</h4><span>Data, analysis</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/zoho-forms.png" alt="Zoho Forms"></div><h4>Zoho Forms</h4><span>Data, validation</span></div>
+          <div class="tool-row"><div class="logo ini">WA</div><h4>Web Analytics</h4><span>Traffic, behaviour</span></div>
+          <div class="tool-row"><div class="logo ini">AA</div><h4>Answer Analytics</h4><span>AI visibility</span></div>
         </div>
+      </div>
+
+      <div class="tool-group">
+        <h3>Third-party tools</h3>
+        <div class="tool-rows">
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/gsc.svg" alt="Google Search Console"></div><h4>Google Search Console</h4><span>Performance diagnostics</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/ahrefs.svg" alt="Ahrefs"></div><h4>Ahrefs</h4><span>Keywords, backlinks, audit</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/google-ads.svg" alt="Google Keyword Planner"></div><h4>Google Ads (Keyword Planner)</h4><span>Keyword research</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/pagespeed.png" alt="PageSpeed Insights"></div><h4>PageSpeed Insights</h4><span>Core Web Vitals</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/authority-labs.png" alt="Authority Labs"></div><h4>Authority Labs</h4><span>Rank tracking</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/play-console.svg" alt="Google Play Console"></div><h4>Google Play Console</h4><span>ASO, Android</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/app-store-connect.svg" alt="App Store Connect"></div><h4>App Store Connect</h4><span>ASO, iOS</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/mobile-action.png" alt="Mobile Action"></div><h4>Mobile Action</h4><span>App store intelligence</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/applyzer.png" alt="Applyzer"></div><h4>Applyzer</h4><span>App ranking data</span></div>
+          <div class="tool-row"><div class="logo"><img src="./Sumithra Manikandan - Product marketing &amp; research_files/writesonic.png" alt="Writesonic"></div><h4>Writesonic</h4><span>AI search, GEO</span></div>
+        </div>
+      </div>
     </section>
-</body>
-</html>
+
+    <section class="block" id="writing">
+      <div class="dek-head">
+        <h2>Writing &amp; content</h2>
+        <p>Monthly contributions to Tharuvai, the Zoho Schools bulletin, plus selected explainers and long-form pieces.</p>
+      </div>
+      <div class="write-list">
+        <a class="write" href="https://workdrive.zohoexternal.in/folder/6ldvi31ff7ef3807041e1a836266d5a188bc3" target="_blank" rel="noopener"><span class="n">1</span><span class="cat">Newsletter</span><h4>Tharuvai bulletin articles - campus events, tools, and features</h4></a>
+        <a class="write" href="https://workdrive.zohopublic.in/writer/open/36v9ia86218863cda44218e0b24de50c586cb" target="_blank" rel="noopener"><span class="n">2</span><span class="cat">Industry analysis</span><h4>AI's impact on Grammarly</h4></a>
+        <a class="write" href="https://workdrive.zohopublic.in/writer/open/095h56a8a06d6ff3c4032b5643c8bb97492ab" target="_blank" rel="noopener"><span class="n">3</span><span class="cat">Explainer</span><h4>CIBIL score, explained simply</h4></a>
+        <a class="write" href="https://workdrive.zohopublic.in/show/open/ox9a1e48f7fc914ff483d91a713df3adfe57e" target="_blank" rel="noopener"><span class="n">4</span><span class="cat">Presentation</span><h4>Data &amp; SEO</h4></a>
+        <a class="write" href="https://workdrive.zohopublic.in/show/open/d7e0v57cbcc9826aa4afd8a296cf20e013930" target="_blank" rel="noopener"><span class="n">5</span><span class="cat">Presentation</span><h4>SEO redirects &amp; Googlebot behaviour</h4></a>
+        <a class="write" href="https://workdrive.zohopublic.in/writer/open/095h58b4c2840ae614ef6bd18742cf5d57e0c" target="_blank" rel="noopener"><span class="n">6</span><span class="cat">Creative</span><h4>Story writing</h4></a>
+        <a class="write" href="https://workdrive.zohopublic.in/writer/open/vi8n7d5a84a9c3a3a42feb03bee5e79ac7d2d" target="_blank" rel="noopener"><span class="n">7</span><span class="cat">Explainer</span><h4>Identity &amp; access management</h4></a>
+        <a class="write" href="https://workdrive.zohopublic.in/writer/open/6ldvi23f9fa7680ec49e4ae49779afd70d109" target="_blank" rel="noopener"><span class="n">8</span><span class="cat">Explainer</span><h4>Multi-factor authentication</h4></a>
+        <a class="write" href="https://show.zoho.in/show/open/2pd2w03cc6bc7de724a84acb2556a42e23a71" target="_blank" rel="noopener"><span class="n">9</span><span class="cat">Personal project</span><h4>Evolution of music: a five-year study</h4></a>
+      </div>
+    </section>
+
+    <section class="block contact" id="contact">
+      <div class="dek-head">
+        <h2>Let's connect</h2>
+        <p>Open to conversations about marketing, research, and product - reach out about roles, collaborations, or feedback on any of this work.</p>
+      </div>
+      <div class="contact-row">
+        <a href="mailto:sumithramanikandan455@gmail.com" class="stamp fill">Email me</a>
+        <a href="https://www.linkedin.com/in/sumithra-manikandan-789163360" target="_blank" rel="noopener" class="stamp">LinkedIn</a>
+      </div>
+    </section>
+
+    <footer>© 2026 Sumithra Manikandan</footer>
+
+  </div>
+</div>
+
+
+
+</body></html>
